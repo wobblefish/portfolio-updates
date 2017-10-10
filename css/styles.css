@@ -119,7 +119,7 @@ li .linkButton:nth-child(4) {border-color:rgb(55, 255, 79);}
   min-height: 340px;
 	/*overflow:hidden;*/
 	border: 5px solid black;
-	background-image: url(../jquery/slideshow/intro.jpg);
+	background-image: url(../images/slideshow/intro.jpg);
 	background-repeat: no-repeat;
 	border: 5px solid rgb(8, 23, 31);
 	background-size:100%;
@@ -160,7 +160,7 @@ li .linkButton:nth-child(4) {border-color:rgb(55, 255, 79);}
 }
 
 li[class^="listItem"] {
-  display: none;
+  /*display: none;*/
 }
 
 .linkButton {

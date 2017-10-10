@@ -1,4 +1,10 @@
+<?php
+	include 'contactInfo.php';
+	$mobile = True;
+?>
+
 <!DOCTYPE html>
+	<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,132 +28,16 @@
 		<!--
 		This was a custom jQuery script I developed to bring some visual interest to a product promotional page
 		List items are highlighted one by one while a corresponding slide image is shown
-		-->	
-		<script type="text/javascript">
-			/* global $ */
-			
-			// On page load the list is hidden and "Click to start slideshow" image is displayed on left
-			//This flag is updated when the user clicks to start the slideshow
-			var slideshowStart = 0; 
-			
-			function StartSlideshow() {		// Initiated when image DIV is clicked		
-				
-				if (slideshowStart == 0) {	// Prevent from starting the slideshow again if flag is not set to zero
-					
-					slideshowStart = 1;   		// If not yet started, update the flag and fade out the intro image and begin to show the list
-					
-					$( '#slideshow' ).fadeOut( 'slow', function() {
-						// If page width < 893 hide, else
-						if ( $(window).width() < 992 ) {
-							$( '#slideshow' ).remove();  
-						} else {
-							$( '#slideshow' ).appendTo( '#contentRight' );
-						}
-					});
-				
-					HighlightList();
-				}
+		-->
+		
+		<?php 
+			if ($mobile) {
+				echo '<script type="text/javascript" src="js/slideshow/slideshowMobile.js"></script>';
+			} else {
+				echo '<script type="text/javascript" src="js/slideshow/slideshowDesktop.js"></script>';
 			}
-	
-			function HighlightList() {
-				//Fade in the list
-				$( '#jqueryList' ).fadeIn( 'slow' );
-				//Update CSS alignment
-				// $( '#contentRight' ).css( 'margin-right', '3%' );
-
-				var timeOuts = new Array();
-				var count = 0; //
-	  	  var eT=500; //Delay time for change in ms
-				initLoop();  //Begin the slideshow
-				
-				function initLoop() {
-					//HIGHLIGHT the list item at the passed index for the set time
-					$( 'li[class^="listItem"]' ).each(function(index) {
-						window.setTimeout(
-						function() {
-							highlight(index);
-						}, 
-						index*eT);
-						
-						console.log("highlight index", index)
-					});				
-					
-					//UN-HIGHLIGHT the list item at the passed index for the set time
-					$( 'li[class^="listItem"]' ).each(function(index) {
-						window.setTimeout(
-						function() {
-							unHighlight(index);
-						}, 
-						(index + 1)*eT);								
-					
-						console.log("unhighlight index", index)
-					});
-				
-					
-					
-				}
-							
-				
-				
-				
-				//Update the background/border/text color for the currently active list item using the passed index + give it a shadow and some IE special handling
-				function highlight(index) {
-					var listIndex = '.listItem' + index;
-					
-					$( listIndex ).css( 'background-color', 'black' );
-					$( listIndex ).css( 'border', '3px double #ffdd00' );
-					$( listIndex ).css( 'color', 'white' );
-					// $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
-					// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
-	
-					//Fade out the previous picture and show the next one to correspond with the current list item
-					$( '#slideshow' ).fadeOut( 'fast', function(){
-						$( '#slideshow' ).css( 'background-image', 'url(images/slideshow/' + (index +1) +'.jpg)' );
-						// $( '#slideshow' )'background-size', '460px 250px' );
-						$( '#slideshow' ).css( 'background-repeat', 'no-repeat' );
-						$( '#slideshow' ).fadeIn( 'fast' );
-						if (index == 0) {$( '#contentRight' ).fadeIn( 'slow' );}
-					});
-					
-					
-					
-					
-					//Make the active item stand out a bit more with some alignment CSS tweaks
-					// $( listIndex ).css( 'width', '470px' );
-					// $( listIndex ).css( 'margin-left', '-5px' );
-					// $( listIndex ).css( 'padding', '21px' );
-					
-				}
-				
-				//Remove all the highlighting changes for the previously active item
-				function unHighlight(index) {
-					var listIndex = '.listItem' + index;
-					$( '#contentLeft' ).find(listIndex).removeClass( 'iehighlight' );
-					$( '#contentLeft' ).find(listIndex).removeClass( 'shadow' );
-					$( listIndex ).css( 'border', '1px solid black' );
-					$( listIndex ).css( 'color', '#dddddd' );
-					$( listIndex ).css( 'background-color', '#222222' );
-					
-					
-					// $( listIndex ).css( 'width', '460px' );
-					// $( listIndex ).css( 'margin-left', '0px' );
-					// $( listIndex ).css( 'padding', '19px' );
-					
-					
-					//Increment the counter to match the next list item
-					count += 1;
-					if (count > $('#jqueryList li').size() -1 )
-					{
-						count = 0;
-						initLoop();
-					}
-					
-				}
-				
-				
-			}
-	  </script>
-		<!--<script type="text/javascript" src="js/slideshow/slideshow.js"></script>-->
+		?>
+		
 		<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
 		
 	</head>
@@ -170,17 +60,7 @@
         </div>
         
         <div class="collapse navbar-collapse" id="main-nav-collapse">
-          
-          <!--<div class="nav navbar-nav navbar-right">-->
-          <!--  <% if user_signed_in? %>-->
-          <!--    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>-->
-          <!--  <% else %>-->
-          <!--    <%= link_to "Login", new_user_session_path, class: "btn btn-default navbar-btn" %>-->
-          <!--  <% end %>-->
-          <!--</div>-->
-            
-          
-          <ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right">
             <!--<li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>-->
 						<li><a class="nav-item nav-link" href="//www.github.com/wobblefish">Code Samples</a></li>
 						<li><a class="nav-item nav-link" href="projects/graphics">Graphics & UI</a></li>
@@ -220,10 +100,9 @@
 		</div>
 		<footer class="footer">
 			<div class="container">
-				Matt McNeil<br>
-				Web Developer / IT Professional<br>
-				<a href="mailto:matt.mcneil1984@gmail.com" target="_top">matt.mcneil1984@gmail.com</a><br>
-				(613)-890-3126<br>
+				<?php
+					echo $contactInfo;
+				?>
 			</div>
 		</footer>
 	</body>
