@@ -1,0 +1,12 @@
+.slideshow { height: 460px; width: 250px; margin: auto }
+.slideshow img {background-color: #eee; }
+
+#slide_object {
+	position:relative;
+	width:500px; height:250px; 
+	overflow:hidden;
+	float: right;
+	border: 5px solid black;
+	background: black;
+	z-index:99998;
+}
