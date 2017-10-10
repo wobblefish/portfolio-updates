@@ -1,4 +1,9 @@
+<?php
+	include 'contactInfo.php';
+?>
+
 <!DOCTYPE html>
+	<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +53,7 @@
 					HighlightList();
 				}
 			}
-	
+			
 			function HighlightList() {
 				//Fade in the list
 				$( '#jqueryList' ).fadeIn( 'slow' );
@@ -57,35 +62,44 @@
 
 				var timeOuts = new Array();
 				var count = 0; //
-	  	  var eT=500; //Delay time for change in ms
+	  	  var delayTime=4000; //Delay time for change in ms
+				var listSize = ( $('#jqueryList li').size() -1 ) ;
 				initLoop();  //Begin the slideshow
 				
+				
 				function initLoop() {
-					//HIGHLIGHT the list item at the passed index for the set time
 					$( 'li[class^="listItem"]' ).each(function(index) {
-						window.setTimeout(
-						function() {
-							highlight(index);
-						}, 
-						index*eT);
 						
-						console.log("highlight index", index)
-					});				
-					
-					//UN-HIGHLIGHT the list item at the passed index for the set time
-					$( 'li[class^="listItem"]' ).each(function(index) {
-						window.setTimeout(
-						function() {
-							unHighlight(index);
-						}, 
-						(index + 1)*eT);								
-					
-						console.log("unhighlight index", index)
-					});
+
+						
+						$(this).delay(delayTime*index).fadeIn(delayTime, function() {
+							$(this).fadeOut(delayTime);
+							$(this).remove();
+								console.log(lastItemSelector);
+							// console.log("lastItemSelector",lastItemSelector);
+							
+							//Fade out the previous picture and show the next one to correspond with the current list item
+							$( '#slideshow' ).fadeOut( delayTime, function(){
+								$( '#slideshow' ).css( 'background-image', 'url(images/slideshow/' + (index +1) +'.jpg)' );
+								// $( '#slideshow' )'background-size', '460px 250px' );
+								$( '#slideshow' ).css( 'background-repeat', 'no-repeat' );
+								$( '#slideshow' ).fadeIn( delayTime );
+								if (index == 0) {$( '#contentRight' ).fadeIn( 'fast' );}
+							});							
+							
+							
+							
+						}); // callback
+						var lastItemSelector = (index == 0 ) ?
+								".listItem" + listSize
+								: ".listItem" + (index);
+						// $( lastItemSelector ).fadeOut(delayTime);
+					}); // each Loop
 				
 					
-					
-				}
+				}; // initLoop
+				
+			} // HighlightList
 							
 				
 				
@@ -94,10 +108,19 @@
 				function highlight(index) {
 					var listIndex = '.listItem' + index;
 					
-					$( listIndex ).css( 'background-color', 'black' );
-					$( listIndex ).css( 'border', '3px double #ffdd00' );
-					$( listIndex ).css( 'color', 'white' );
-					// $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
+					
+					
+					// $( listIndex ).fadeIn(delayTime);
+					
+					
+					// $( listIndex ).css( 'background-color', 'black' );
+					// $( listIndex ).css( 'border', '3px double #ffdd00' );
+					// $( listIndex ).css( 'color', 'white' );
+					
+					
+					
+					
+					// // $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
 					// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
 	
 					//Fade out the previous picture and show the next one to correspond with the current list item
@@ -121,12 +144,25 @@
 				
 				//Remove all the highlighting changes for the previously active item
 				function unHighlight(index) {
-					var listIndex = '.listItem' + index;
-					$( '#contentLeft' ).find(listIndex).removeClass( 'iehighlight' );
-					$( '#contentLeft' ).find(listIndex).removeClass( 'shadow' );
-					$( listIndex ).css( 'border', '1px solid black' );
-					$( listIndex ).css( 'color', '#dddddd' );
-					$( listIndex ).css( 'background-color', '#222222' );
+					var listIndex = '.listItem' + index,
+							nextIndex = '.listItem' + (index + 1) 
+							nextIndex = (index <= listSize) ? 
+								'.listItem' + (index + 1)  
+								:'.listItem' + 0;
+				
+					console.log("beginning fadeout");
+					$( listIndex ).fadeOut(delayTime, function() {
+						console.log("before fadeIn");
+						$( nextIndex ).fadeIn('slow');
+						console.log("fadein complete");
+					});
+				
+				
+					// $( '#contentLeft' ).find(listIndex).removeClass( 'iehighlight' );
+					// $( '#contentLeft' ).find(listIndex).removeClass( 'shadow' );
+					// $( listIndex ).css( 'border', '1px solid black' );
+					// $( listIndex ).css( 'color', '#dddddd' );
+					// $( listIndex ).css( 'background-color', '#222222' );
 					
 					
 					// $( listIndex ).css( 'width', '460px' );
@@ -136,7 +172,7 @@
 					
 					//Increment the counter to match the next list item
 					count += 1;
-					if (count > $('#jqueryList li').size() -1 )
+					if (count > listSize -1 )
 					{
 						count = 0;
 						initLoop();
@@ -145,7 +181,7 @@
 				}
 				
 				
-			}
+			// }
 	  </script>
 		<!--<script type="text/javascript" src="js/slideshow/slideshow.js"></script>-->
 		<link href="css/slideshow.css" rel="stylesheet" type="text/css" />
@@ -220,10 +256,9 @@
 		</div>
 		<footer class="footer">
 			<div class="container">
-				Matt McNeil<br>
-				Web Developer / IT Professional<br>
-				<a href="mailto:matt.mcneil1984@gmail.com" target="_top">matt.mcneil1984@gmail.com</a><br>
-				(613)-890-3126<br>
+				<?php
+					echo $contactInfo;
+				?>
 			</div>
 		</footer>
 	</body>
