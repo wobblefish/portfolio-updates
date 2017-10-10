@@ -1,0 +1,11 @@
+In addition to jQuery UI support for drag/drop, this plugin also supports the
+interface plugin.
+
+Download: http://interface.eyecon.ro
+
+When using this plugin with jQuery version 1.2.x, you will need to also
+include the dimensions plugin.
+
+Download: http://plugins.jquery.com/project/dimensions
+
+

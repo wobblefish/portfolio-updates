@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<head>
+        <title>jGlideMenu - Static Menu</title>
+        <style  type="text/css">
+                body { font-family: verdana, arial, sans-serif; color: #535353; font-size: .62em;  background: #f3f8f0; }
+                #launch
+                { font-family: tahoma,sans-serif; }
+                a#launch
+                { text-decoration: none; color: #535353; }
+                a#launch:HOVER
+                { text-decoration: underline; color: #f90; }
+                .ifM_header
+                { cursor: Move; }
+                #overview a { color: darkgreen; text-decoration: none; }
+                #overview a:HOVER { color: #f90; }
+                #jGlide_002 { top: 100px; left: 10px; }
+        </style>
+        <link rel="stylesheet" type="text/css" href="css/jGlideMenu.css" />
+        <!-- Current Release of jQuery - at time of build -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <!-- Remove the following line to disabled dragging-dropping / Also Edit CSS to Remove cursor:move from .jGM_header -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jQuery.jGlideMenu.067.min.js"></script>
+        <script type="text/javascript">
+                $(document).ready(function(){
+                        // Initialize Menu
+                        $('#jGlide_002').jGlideMenu({
+                                tileSource      : 'ajax.php',
+				useTileURL	: true,
+				URLParams:	{ key : 'abcdefghijklmnop', site : 1 },
+                                demoMode        : true 
+                        }).show();
+
+			$('#switch').click(function(){$(this).jGlideMenuToggle();});
+		});
+	</script>
+<body>
+<p><a href="index.html" title="Back to Overview">&laquo;&nbsp;Back to Project Overview</a></p>
+	<a href="#" id="switch">Toggle</a>
+
+	<div class="jGM_box" id="jGlide_002">This is Example Two</div>
+</body>
+<script type="text/javascript" src="/resources/js/plugins/google/analytics/gatag.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7365212-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</html>
