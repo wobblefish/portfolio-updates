@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <i class="fa fa-code"></i>
+        <i class="fa fa-cubes"></i>
         Matt McNeil<br />
 				<span class="text-small">Web Development Portfolio<span>
 			</a>

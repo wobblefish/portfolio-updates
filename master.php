@@ -28,8 +28,12 @@
 		
 		
 		<!--
-		This was a custom jQuery script I developed to bring some visual interest to a product promotional page
-		List items are highlighted one by one while a corresponding slide image is shown
+			Below was a custom jQuery script I developed to bring some visual interest to a product promotional page
+			List items are highlighted one by one while a corresponding slide image is shown in the desktop version
+			
+			To optimize for mobile, will be showing the image as full width, fading it in along with the text.
+			The text will overlay the image. Both will show for a set amount of time and then fade out together
+			The next group will then fade in together
 		-->
 		<?php 
 			if ($mobile) {
@@ -58,44 +62,16 @@
     <link rel="stylesheet" href="/js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
     <script type="text/javascript" src="/js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
     
-    <script type="text/javascript">
-    	$(document).ready(function() {
-    		$(".fancybox").fancybox();
-    		
-    		$('.fancybox-iframe').load( function() {
-    		$('.fancybox-iframe').contents().find("head")
-    		.append($("<style type='text/css'>  img{width:100%;}  </style>"));
-    		
-    	});
-    	
+    <!-- Load Fancy Box Options for Images -->
+    <script type="text/javascript" src="/js/fancy-box-images.js"></script>
     
-    	
-    </script>
-    
-    <script type="text/javascript">
-      $(document).ready(function() {
-           $(".fancybox").fancybox({
-      		width    : '100%', 
-      		height   : '100%', 
-      		autoSize    : false, 
-      		closeClick  : false, 
-      		fitToView   : true, 
-      		autoScale   : true, 
-      		openEffect  : 'fade', 
-      		closeEffect : 'fade', 
-      		type : 'image'
-      		});
-      });
-    </script>
-		
 	</head>
   <body>
-    <?php define("APP_ROOT", $_SERVER['DOCUMENT_ROOT']); ?>
-    
     <div><?php include(APP_ROOT . '/content/navigation.php');?></div>
     <div><?php include(APP_ROOT . '/content/_' . $page_content);?></div>
     <div><?php include(APP_ROOT . '/content/footer.php');?></div>
-    
+
+	  <!-- Pre-load elements with template -->
     <div class="preload" style="display:none">
     	<img src="/images/graphic-design/Logo1-bretonsmartek.jpg" />
 			<img src="/images/graphic-design/Logo2-fireq.jpg" />
