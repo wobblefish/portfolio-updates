@@ -25,12 +25,12 @@
 		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
-	
+		
+		
 		<!--
 		This was a custom jQuery script I developed to bring some visual interest to a product promotional page
 		List items are highlighted one by one while a corresponding slide image is shown
 		-->
-		
 		<?php 
 			if ($mobile) {
 				echo '<script type="text/javascript" src="js/slideshow/slideshowMobile.js"></script>';
@@ -91,8 +91,21 @@
 	</head>
   <body>
     <?php define("APP_ROOT", $_SERVER['DOCUMENT_ROOT']); ?>
+    
     <div><?php include(APP_ROOT . '/content/navigation.php');?></div>
     <div><?php include(APP_ROOT . '/content/_' . $page_content);?></div>
     <div><?php include(APP_ROOT . '/content/footer.php');?></div>
+    
+    <div class="preload" style="display:none">
+    	<img src="/images/graphic-design/Logo1-bretonsmartek.jpg" />
+			<img src="/images/graphic-design/Logo2-fireq.jpg" />
+			<img src="/images/graphic-design/Logo3-cit.png" />
+			<img src="/images/graphic-design/Logo4-ggm.jpg" />
+			<img src="/images/graphic-design/businessCard.png" />
+			<img src="/images/graphic-design/musicFlyer1.jpg" />
+			<img src="/images/graphic-design/musicFlyer2.jpg" />
+			<img src="/images/graphic-design/musicFlyer3.jpg" />
+    </div>
+    
   </body>
 </html>
