@@ -11,12 +11,13 @@
 					slideshowStart = 1;   		// If not yet started, update the flag and fade out the intro image and begin to show the list
 					
 					$( '#slideshow' ).fadeOut( 'slow', function() {
+						$( '#slideshow' ).removeClass( 'intro' );
 						// If page width < 893 hide, else
-						if ( $(window).width() < 992 ) {
-							$( '#slideshow' ).remove();  
-						} else {
+						// if ( $(window).width() < 992 ) {
+						// 	$( '#slideshow' ).remove();  
+						// } else {
 							$( '#slideshow' ).appendTo( '#contentRight' );
-						}
+						// }
 					});
 				
 					HighlightList();
