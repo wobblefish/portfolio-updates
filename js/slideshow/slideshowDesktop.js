@@ -11,16 +11,16 @@
 					slideshowStart = 1;   		// If not yet started, update the flag and fade out the intro image and begin to show the list
 					
 					$( '#slideshow' ).fadeOut( 'slow', function() {
-						$( '#slideshow' ).removeClass( 'intro' );
+						$( '#slideshow' ).removeClass( 'intro' ).empty();
 						// If page width < 893 hide, else
 						// if ( $(window).width() < 992 ) {
 						// 	$( '#slideshow' ).remove();  
 						// } else {
 							$( '#slideshow' ).appendTo( '#contentRight' );
 						// }
+					
+						HighlightList();
 					});
-				
-					HighlightList();
 				}
 			}
 	
@@ -32,7 +32,7 @@
 
 				var timeOuts = new Array();
 				var count = 0; //
-	  	  var eT=500; //Delay time for change in ms
+	  	  var eT=8000; //Delay time for change in ms
 				initLoop();  //Begin the slideshow
 				
 				function initLoop() {
@@ -75,9 +75,13 @@
 					// $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
 					// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
 	
-					//Fade out the previous picture and show the next one to correspond with the current list item
+					// ** IMAGES **
+					//Fade out the previous picture and show the next image to correspond with the current list item
 					$( '#slideshow' ).fadeOut( 'fast', function(){
+						$( '#slideshow' ).empty();
 						$( '#slideshow' ).css( 'background-image', 'url(images/slideshow/' + (index +1) +'.jpg)' );
+						$( '#slideshow' ).append( '<img class="fading-image" src="/images/slideshow/' + (index +1) +'.jpg" />' );
+						$( '.fading-image' ).css( 'visibility', 'hidden');
 						// $( '#slideshow' )'background-size', '460px 250px' );
 						$( '#slideshow' ).css( 'background-repeat', 'no-repeat' );
 						$( '#slideshow' ).fadeIn( 'fast' );
