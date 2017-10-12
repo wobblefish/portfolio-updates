@@ -12,13 +12,13 @@
 					
 					$( '#slideshow' ).fadeOut( 'slow', function() {
 						$( '#slideshow' ).removeClass( 'intro' ).empty();
-						// If page width < 893 hide, else
-						// if ( $(window).width() < 992 ) {
-						// 	$( '#slideshow' ).remove();  
-						// } else {
-							$( '#slideshow' ).appendTo( '#contentRight' );
-						// }
-					
+						$( '#slideshow' ).appendTo( '#contentRight' );
+						// If window resized and width < 992 hide image
+						$( window ).resize( function() {
+								if ( $(window).width() < 992 ) {
+									$( '#slideshow' ).remove();
+								}
+						});
 						HighlightList();
 					});
 				}

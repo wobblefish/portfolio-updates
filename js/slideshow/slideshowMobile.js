@@ -32,8 +32,8 @@
 				$( '#slideshow' ).css( 'margin-top', '0px');
 				$( '#contentLeft' ).prepend( slideshow );
 				// slideshow.css('display', 'unset')
-				$( '#contentRight' ).remove();
-				$( '#contentLeft' ).removeClass( 'col-xs-8' ).addClass( 'col-xs-12' );
+				// $( '#contentRight' ).remove();
+				// $( '#contentLeft' ).removeClass( 'col-xs-8' ).addClass( 'col-xs-12' );
 				$( '#jqueryList' ).css( 'margin-top', '-182px' ).css( 'width', '100%' ).css( 'opacity', '0.7' ).fadeIn(500);
 				RotateListItems();
 			// });
@@ -52,7 +52,7 @@
 			            if (i === listLen) {
 			                i = 0;
 			            }
-			            listItems.eq(i).fadeIn(500);
+			            listItems.eq(i).css('position', 'absolute').css('bottom', '0').css('vertical-align', 'text-bottom').fadeIn(500);
 			        });
 		        console.log(i+1);
 	        	//Fade out the previous picture and show the next image to correspond with the current list item

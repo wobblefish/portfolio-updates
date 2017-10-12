@@ -11,10 +11,10 @@
 		<div id="contentLeft" class="col-xs-12 col-md-8">
 			<!--Start the slideshow when image DIV is clicked -->
 			<div id="slideshow" class="intro" onmouseup='StartSlideshow()'>
- 				<img src="/images/slideshow/intro.jpg" style="visibility: hidden; height:600px;" />
+ 				<img src="/images/slideshow/intro.jpg" style="visibility: hidden;" />
 			</div>
 
-			<ul id="jqueryList">
+			<ul id="jqueryList" style="position:relative;">
 				<li class="listItem0">Over 5 years of experience of web development in several languages - HTML5 / CSS3 / JavaScript / jQuery / PHP / Ruby On Rails / Python / SQL (MySQL, PostgreSQL, SQL Server) creating or modifying existing code</li>
 	
 				<li class="listItem1">Skilled with creative process and graphic design, several years experience in front-end development, experienced with Adobe Photoshop - has created logos for several products and design flyers and brochures for print</li>
