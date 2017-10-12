@@ -43,6 +43,6 @@
     	<p class="text-center font-weight-bold">Lucky 13</p>
     </div>
     
-    <div class="newline" style="height:150px; clear:both;"></div>
+    <div class="spacer" style="height:60px; clear:both;"></div>
 	</div>
 </div>

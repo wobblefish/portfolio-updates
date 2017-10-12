@@ -1,8 +1,11 @@
 body {			
-	min-height: 100vh;
-	position: relative;
+	/*min-height: 100vh;*/
+	/*position: relative;*/
 	/*margin-bottom: 250px;*/
 	font-family: 'Titillium Web', sans-serif;
+	/*min-height: 400px;*/
+  margin-bottom: 120px;
+  clear: both;
 }
 
 .footer {
@@ -124,6 +127,11 @@ li .linkButton:nth-child(4) {
     }
 }
 
+/* Smartphones ----------- */
+@media only screen and (max-width: 760px) {
+  #detectMobile { display: none; }
+}
+
 /* Bootstrap Navbar Styles */
 
 .navbar-default {
@@ -157,8 +165,20 @@ li .linkButton:nth-child(4) {
 }
 
 .navbar-nav>li>a {
-	padding-top:30px;
+    margin-top: 18px;
 }
+
+.navbar-default .navbar-nav>li>a:focus {
+	color:white;
+	outline: 0;
+}
+.navbar-default .navbar-nav>li>a:hover {
+	color: hsla(208, 86%, 76%, 1);
+}
+.navbar-default .navbar-nav>li>a.active {
+	color: hsla(208, 86%, 76%, 1);
+}
+	
 
 .nav-link.linkButton {
 	font-size: 68%;
