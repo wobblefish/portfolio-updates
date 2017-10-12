@@ -18,10 +18,10 @@
 			<ul class="nav navbar-nav navbar-right">
         <!--<li><a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a></li>-->
 				
-				<li><a class="nav-item nav-link active" href="/">Home</a></li>
-				<li><a class="nav-item nav-link" href="#">Web Development</a></li>
-				<li><a class="nav-item nav-link" href="/projects/graphics">Graphics</a></li>
-				<li><a class="nav-item nav-link" href="//www.github.com/wobblefish" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub">Code Samples</a></li>
+				<li><a id="home" class="nav-item nav-link active" href="/">Home</a></li>
+				<li><a id="webdev" class="nav-item nav-link" href="/projects/web-development">Web Development</a></li>
+				<li><a id="graphics" class="nav-item nav-link" href="/projects/graphics">Graphics</a></li>
+				<li><a id="github" class="nav-item nav-link" href="//www.github.com/wobblefish" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub">Code Samples</a></li>
 				<!--<li><a class="nav-item nav-link disabled" href="#">Disabled</a></li>-->
       </ul>
     </div><!-- /.navbar-collapse -->

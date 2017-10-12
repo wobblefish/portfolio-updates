@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(document).ready(function () {
+	  /* global $ */
+	  $(".nav-link").removeClass("active");
+	  $('#graphics').addClass('active');
+	});
+</script>
 <div id="container">					
 	<div id="row">
     <h1 class="text-center">Logos</h1>
