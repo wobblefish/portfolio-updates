@@ -8,7 +8,7 @@
 
 <div class="container">
 	<div class="row">
-		<div id="contentLeft" class="col-xs-8">
+		<div id="contentLeft" class="col-xs-12 col-md-8">
 			<!--Start the slideshow when image DIV is clicked -->
 			<div id="slideshow" class="intro" onmouseup='StartSlideshow()'>
  				<img src="/images/slideshow/intro.jpg" style="visibility: hidden; height:600px;" />
@@ -29,7 +29,7 @@
 			</ul>
 		</div> <!--contentLeft-->
 		
-		<div id="contentRight" class="col-xs-4"></div>
+		<div id="contentRight" class="col-xs-0 col-md-4"></div>
 		
 	</div>
 </div>
