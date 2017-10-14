@@ -30,7 +30,7 @@
 				$( '#slideshow' ).removeClass( 'intro' ).empty();
 				$( '#slideshow' ).css( 'min-height', '250px').css( 'max-height', '200px' ).css( 'border', '0' );
 				$( '#slideshow' ).css( 'margin-top', '0px');
-				$( '#contentLeft' ).prepend( slideshow );
+				// $( '#contentLeft' ).prepend( slideshow );
 				// slideshow.css('display', 'unset')
 				// $( '#contentRight' ).remove();
 				// $( '#contentLeft' ).removeClass( 'col-xs-8' ).addClass( 'col-xs-12' );

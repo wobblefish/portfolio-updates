@@ -66,12 +66,22 @@ li .linkButton:nth-child(4) {
 	color: #dddddd;
 }
 
+/* Styling for the div when displaying the mobile version */
+#slideshow-mobile-row div {
+    margin: 20px 30px;
+    width: 93%;
+}
+
+
 #slideshow {
-	position:relative;
-	border: 5px solid black;
+	/*position:relative;*/
+	/*border: 5px solid black;*/
+	-webkit-box-shadow:0px 0px 5px 4px #5e5e5e ;
+	-moz-box-shadow:0px 0px 5px 4px #5e5e5e ;
+	box-shadow:0px 0px 5px 4px #5e5e5e ;
 	background-image: url(../images/slideshow/intro.jpg);
 	background-repeat: no-repeat;
-	background-size: auto 500px;
+	/*background-size: auto 500px;*/
   /*min-height: 386px;*/
   margin-top: 62px;
   
@@ -84,16 +94,16 @@ li .linkButton:nth-child(4) {
 @keyframes move {
   0%, 100% {
     background-position: top;
-    background-size: auto 500px;
+    background-size: 150% auto;
   }
   50% {
     background-position: bottom right;
-    background-size: auto 386px;
+    background-size: 125% auto;
   }
 }
 
 #slideshow img {
-	visibility: hidden;
+	/*visibility: hidden;*/
   width: 100%;
 }
 
@@ -125,16 +135,12 @@ li .linkButton:nth-child(4) {
     }
 }
 
-@media only screen and (max-width: 300px) {
-    #slideshow {
-        /*display: none;*/
-    }
-}
+/*@media only screen and (max-width: 576px) {*/
+/*    #slideshow {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
-/* Smartphones ----------- */
-@media only screen and (max-width: 760px) {
-  #detectMobile { display: none; }
-}
 
 /* Bootstrap Navbar Styles */
 

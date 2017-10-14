@@ -8,13 +8,13 @@
 
 <div class="container">
 	<div class="row">
-		<div id="contentLeft" class="col-xs-12 col-md-8">
+		<div id="contentLeft" class="col-xs-12 col-md-6 col-lg-6">
 			<!--Start the slideshow when image DIV is clicked -->
 			<div id="slideshow" class="intro" onmouseup='StartSlideshow()'>
- 				<img src="/images/slideshow/intro.jpg" style="visibility: hidden;" />
+ 				<img src="/images/slideshow/intro.jpg" class="img-responsive" style="visibility: hidden;" />
 			</div>
 
-			<ul id="jqueryList" style="position:relative;">
+			<ul id="jqueryList">
 				<li class="listItem0">Over 5 years of experience of web development in several languages - HTML5 / CSS3 / JavaScript / jQuery / PHP / Ruby On Rails / Python / SQL (MySQL, PostgreSQL, SQL Server) creating or modifying existing code</li>
 	
 				<li class="listItem1">Skilled with creative process and graphic design, several years experience in front-end development, experienced with Adobe Photoshop - has created logos for several products and design flyers and brochures for print</li>
@@ -27,9 +27,18 @@
 	
 				<li class="listItem5">Committed to high quality, professional work with attention to detail</li>
 			</ul>
+			
 		</div> <!--contentLeft-->
 		
-		<div id="contentRight" class="col-xs-0 col-md-4"></div>
+		<div id="contentRight" class="col-xs-12 col-md-6 col-lg-6"></div>
 		
+	</div>
+</div>
+
+<div class="container"style="margin:0; padding:0;">
+	<div id="slideshow-mobile-row" class="row" style="margin:0; padding:0;">
+		<div class="col-xs-12 col-md-0">
+			 <!--On mobile, the list items will be inserted here -->
+		</div>
 	</div>
 </div>

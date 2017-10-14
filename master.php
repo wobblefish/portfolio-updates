@@ -90,7 +90,8 @@
 				    return "/js/slideshow/slideshowDesktop.js";
 				}
 				else {
-				    return "/js/slideshow/slideshowMobile.js";
+				    // return "/js/slideshow/slideshowMobile.js";
+				    return "/js/slideshow/slideshowDesktop.js";
 				}
 			}
 			

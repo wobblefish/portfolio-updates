@@ -33,7 +33,7 @@
 			
 			var timeOuts = new Array();
 			var count = 0; //
-            var eT=3955; //Delay time for change in ms
+            var delayTime=3955; //Delay time for change in ms
 			initLoop();  //Begin the slideshow
 			
 			function initLoop() { 
@@ -43,7 +43,7 @@
 					function() {
 						highlight(index);
 					}, 
-					index*eT);
+					index*delayTime);
 				});				
 				
 				//UN-HIGHLIGHT the list item at the passed index for the set time
@@ -52,7 +52,7 @@
 					function() {
 						unHighlight(index);
 					}, 
-					(index + 1)*eT);								
+					(index + 1)*delayTime);								
 				});
 			}
 						
