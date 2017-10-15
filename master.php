@@ -62,9 +62,6 @@
 		<script type="text/javascript">
 			/* global $ */
 			
-			var initial_window_size,
-					changed_window_size;
-			
 			$( document ).ready(function() {     
 				
 				// Enable tooltips
@@ -72,35 +69,18 @@
 					trigger : 'hover'
 				});
 				
-				
-				// Append the desktop or the mobile slideshow JS based
-				// on window size
-				initial_window_size = $(window).width();
-				var script = determineScript(initial_window_size); 
-				
 				$('head').append( $("<script />", {
   				type: 'text/javascript',
-  				src: script
+  				src: "/js/slideshow/homeSlideshow.js"
 				}));
 			});
-			
-			function determineScript(window_size) {
-				console.log(window_size);
-				if (window_size >= 978) {
-				    return "/js/slideshow/slideshowDesktop.js";
-				}
-				else {
-				    // return "/js/slideshow/slideshowMobile.js";
-				    return "/js/slideshow/slideshowDesktop.js";
-				}
-			}
 			
 		</script>
 	</head>
   <body>
-    <div><?php include(APP_ROOT . '/content/navigation.php');?></div>
-    <div><?php include(APP_ROOT . '/content/_' . $page_content);?></div>
-    <div><?php include(APP_ROOT . '/content/footer.php');?></div>
+    <?php include(APP_ROOT . '/content/navigation.php');?>
+    <?php include(APP_ROOT . '/content/_' . $page_content);?>
+    <?php include(APP_ROOT . '/content/footer.php');?>
 
 	  <!-- Pre-load elements with template -->
     <div class="preload" style="display:none">

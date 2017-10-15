@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, Image */
 
 // On page load the list is hidden and "Click to start slideshow" image is displayed on left
 //This flag is updated when the user clicks to start the slideshow
@@ -9,7 +9,71 @@ var fadeInterval,
 		HLTimeout,
 		uHLTimeout;
 
-// Resize check ()
+
+
+$(document).ready(resizeHeaders);
+// $(window).on('resize',resizeHeaders);
+
+function resizeHeaders() {
+
+	if ($(window).height() < 300) {
+		//Change header for short displays
+		// Note: would like to simplify this with some height based media queries
+		
+		
+  		// Change the text content and size
+			$('.navbar-brand').html("<i class='fa fa-cubes'></i>Matt McNeil <span class='text-small '>Web Development Portfolio<span>");
+			$('.nav, .navbar-brand').css({'font-size' : '120%', 'height' : 'auto', 'padding' : '15px'});
+			$('.nav, .nav.navbar.navbar-default.navbar-static-top').css('padding', '0');
+			$('.navbar-collapse a.nav-link').css({'padding' : '0px !important', 'font-size': '60%'});
+				// 'margin' : '0px !important'});
+			
+			
+			// 
+			$('button.navbar-toggle.collapsed').css({
+    		'margin' : '10px',
+    		'padding' : '5px'
+  		});
+  		
+			
+			//Minimize Footer 
+			$('.footer').css({
+					'font-size': '61%',
+    			'padding' : '5px !important'
+			});
+			
+			// $('a.navbar-brand').css('position', 'absolute').animate({padding : '1px 25px', top: '10px'}, 500);
+			$('#slideshow').css({
+				'max-height' : .2*$(window).height(), 
+				'background-size' : '400%' 
+			}).html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
+		// });
+	}
+}
+	
+$(document).ready(function() {
+	
+	function preloadImage(url)
+	{
+	    var img=new Image();
+	    img.src=url;
+	}
+	for (var index=1; index <= 10; index++) {
+		console.log("loading", '/images/slideshow/' + index + ".jpg")
+		preloadImage('/images/slideshow/' + index + ".jpg");
+	}
+	
+	// $(window).click(function() {
+	// 	console.log("window clicked");
+	// 	console.log(HLTimeout, uHLTimeout);
+	// 	clearTimeout(HLTimeout);
+	// 	clearTimeout(uHLTimeout);
+	// })
+	
+	// Resize check ()
+	// WIP - will need to undo all of the CSS changes from Highlight or Rotate functions
+	// to begin performing the opposite function
+	
 // $(window).resize(function() {
 // 	if ($(window).width() < 992) {
 // 		clearTimeout(HLTimeout);
@@ -27,6 +91,10 @@ var fadeInterval,
 // 	}
 // });
 
+	
+}); //document ready
+
+
 	function StartSlideshow() { // Initiated when image DIV is clicked		
 
 		if (slideshowStart == 0) { // Prevent from starting the slideshow again if flag is not set to zero
@@ -34,20 +102,35 @@ var fadeInterval,
 			slideshowStart = 1; // If not yet started, update the flag and fade out the intro image and begin to show the list
 
 			$('#slideshow').fadeOut('slow', function() {
-
 				$('#slideshow').removeClass('intro')
 				// If window resized and width < 992 hide image
 				
-				if ($(window).width() < 992) {
+				// For Phone Landscape view
+				if ($(window).height() < 768) {
 					// $( '#slideshow' ).remove();
-					$('#slideshow').empty().css('min-height', '200px').css('max-height', '200px').css('margin-top', '0px');
-
-					$('#jqueryList').css('margin-top', '-182px').css('width', '100%').css('opacity', '0.94').fadeIn(500);
+					$('#slideshow').empty().css({
+						'min-height' : '150px',
+						'max-height' : .5*$(window).height(),
+						'margin-top' : '0px'
+					});
+					
+					
+					// $('footer').animate({margin : '0 0 -95px 0'}, 1500);
+					$('footer').slideUp('3000');
+					
+					$('#jqueryList').css({
+						'margin-top' : '-182px',
+						'width' : '100%',
+						'opacity' : '0.94'
+					}).fadeIn(500);
 					$('#jqueryList').appendTo('#slideshow-mobile-row div');
 					RotateListItems();
 				}
 				else {
-					$('#slideshow').css('width', '100%').css('max-height', '444px').appendTo('#contentRight');
+					$('#slideshow').css({
+						'width' : '100%',
+						'max-height' : '444px'
+					}).appendTo('#contentRight');
 					// check if it's on the right
 					// move back if so
 					HighlightList();
@@ -56,7 +139,8 @@ var fadeInterval,
 			});
 		}
 	}
-
+	
+	// Desktop List Highlighting function
 	function HighlightList() {
 		//Fade in the list
 		$('#jqueryList').fadeIn('slow');
@@ -102,7 +186,8 @@ var fadeInterval,
 			// $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
 			// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
 
-			// ** IMAGES **
+
+	// ** IMAGES **
 			//Fade out the previous picture and show the next image to correspond with the current list item
 			$('#slideshow').fadeOut('fast', function() {
 
@@ -145,10 +230,15 @@ var fadeInterval,
 		}
 
 	}
-
+	
+	//jQuery Mobile Fade function
 	function RotateListItems() {
 
-		$('#jqueryList li').css('min-height', '5%').css('padding', '20px').css('margin-top', '60px').hide();
+		$('#jqueryList li').css({
+			'min-height' : '5%',
+			'padding' : '20px',
+			'margin-top' : '60px'
+		}).hide();
 		$('#slideshow').css('background-image', 'url(images/slideshow/1.jpg)').fadeIn();
 		$('#jqueryList li').eq(0).fadeIn();
 		$(function() {
@@ -169,7 +259,7 @@ var fadeInterval,
 					//Fade out the previous picture and show the next image to correspond with the current list item
 					$('#slideshow').fadeOut('fast', function() {
 						$('#slideshow').css('background-image', 'url(images/slideshow/' + (i + 2) + '.jpg)');
-						$('#slideshow').append('<img class="fading-image" src="/images/slideshow/' + (i + 2) + '.jpg" />');
+						$('#slideshow').empty().append('<img class="fading-image" src="/images/slideshow/' + (i + 2) + '.jpg" />');
 						$('.fading-image').css('visibility', 'hidden');
 						$('#slideshow').css('background-repeat', 'no-repeat');
 						$('#slideshow').fadeIn('fast');
@@ -179,5 +269,5 @@ var fadeInterval,
 
 
 			fadeInterval = setInterval(changeList, delayTime);
-		});
-	}
+		}); //jQuery mobile fade function
+	} // RotateListItems
