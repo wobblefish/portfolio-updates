@@ -23,7 +23,30 @@ body {
 	border-radius: 5px;
 	box-shadow: -2px 2px 4px 1px rgb(20, 20, 20);
 }
+.footerButton {
+  position: fixed;
+  width: 115% !important;
+  left: -3px;
+  bottom: 0px;
+  /*margin: -70px;*/
+  padding: 0;
+  width: 100%;
+  background: #085a91;
+  background: -webkit-linear-gradient(to left, #041e34, #085a91);
+  background: linear-gradient(to left, #085a91, #041e34);
+  color: white;
+  border-radius: 5px;
+}
+.footerButton button.btn.btn-link {
+  width: 100%;
+  border: 1px solid #0d90e7;
+  border-radius: 5px;
+  padding: 10px 0px;
+}
 
+.footerButton i {
+	color:white;
+}
 
  /*Color changing for the site button hover effects */
 li a:nth-child(1):hover 

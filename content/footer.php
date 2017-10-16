@@ -5,13 +5,17 @@
 
 
 <div class="container">
-		<footer class="footer">
+	<div class="footerButton">
+		<button id="showHideFooter" type="button" class="btn btn-link"><i class="fa"></i></button>	
+	</div>
+	<footer class="footer">
 		<div class="row">
-		<div class="col-xs-12">
-		<?php
-			echo $contactInfo;
-		?>
-		</div>
+			<div class="col-xs-12">
+				
+				<?php
+					echo $contactInfo;
+				?>
+			</div>
 		</div>
 	</footer>
 </div>

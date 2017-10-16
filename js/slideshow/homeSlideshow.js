@@ -9,9 +9,10 @@ var fadeInterval,
 	HLTimeout,
 	uHLTimeout,
 	continueLoop;
+var footerHeight;
 
-// $(document).ready(resizeHeaders);
-// $(window).on('resize',resizeHeaders);
+$(document).ready(resizeHeaders);
+$(window).on('resize',resizeHeaders);
 
 function resizeHeaders() {
 
@@ -25,6 +26,8 @@ function resizeHeaders() {
 			'max-height': .2 * $(window).height(),
 			'background-size': '400%'
 		}).html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
+		
+		footerHeight = $('footer.footer').height();
 	}
 	else {
 		//reverse the changes (display fullscreen version)
@@ -45,6 +48,18 @@ function resizeHeaders() {
 	}
 }
 
+function showHideFooter() {
+	if ( $('.footer').is(':visible') ) {
+		$('footer').slideUp('3000');
+		$('.footerButton i').removeClass('fa-arrow-circle-o-down').addClass('fa-arrow-circle-o-up')
+		$('.footerButton').animate({'bottom' : '0'}, 500);
+	} else {
+		$('footer').slideDown('3000');
+		$('.footerButton i').removeClass('fa-arrow-circle-o-up').addClass('fa-arrow-circle-o-down')
+		$('.footerButton').animate({'bottom' : footerHeight }, 500);
+	}
+}
+
 $(document).ready(function() {
 
 	function preloadImage(url) {
@@ -55,6 +70,10 @@ $(document).ready(function() {
 		console.log("loading", '/images/slideshow/' + index + ".jpg")
 		preloadImage('/images/slideshow/' + index + ".jpg");
 	}
+	
+	$('#showHideFooter').click(function() {
+		showHideFooter();
+	});
 
 	//Testing slideshow stop/start with click
 
@@ -113,7 +132,8 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 
 
 				// $('footer').animate({margin : '0 0 -95px 0'}, 1500);
-				$('footer').slideUp('3000');
+				footerHeight = $('footer.footer').height() + 36;
+				showHideFooter();
 
 				$('#jqueryList').css({
 					'margin-top': '-182px',
@@ -168,10 +188,7 @@ function HighlightList() {
 				(index + 1) * delayTime);
 		});
 	}
-
-
-
-
+	
 	//Update the background/border/text color for the currently active list item using the passed index + give it a shadow and some IE special handling
 	function highlight(index) {
 		var listIndex = '.listItem' + index;
