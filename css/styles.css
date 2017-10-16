@@ -119,6 +119,9 @@ li .linkButton:nth-child(4) {
   .container {
       width: 1540px;
   }
+   #slideshow {
+      max-height: 444px;
+  }
 }
 
 @media only screen and (min-width: 1900px) {
