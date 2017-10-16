@@ -27,7 +27,7 @@ function resizeHeaders() {
 			'background-size': '400%'
 		}).html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
 		
-		footerHeight = $('footer.footer').height();
+		footerHeight = 56;
 	}
 	else {
 		//reverse the changes (display fullscreen version)
@@ -44,6 +44,8 @@ function resizeHeaders() {
 			'max-height': '',
 			'background-size': '100% auto'
 		}).html('<img src="' + currentImage + '" />');
+		
+		footerHeight = 120;
 
 	}
 }
