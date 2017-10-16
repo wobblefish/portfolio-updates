@@ -194,6 +194,40 @@ li .linkButton:nth-child(4) {
 .navbar-default .navbar-nav>li>a.active {
 	color: hsla(208, 86%, 76%, 1);
 }
+
+
+
+
+
+/*Landscape Mobile Nav*/
+
+@media only screen and (max-height: 300px) {
+	.nav, .navbar-brand {
+		font-size: 120%;
+		height: auto;
+		padding: 5px 15px;
+	}
+	a.navbar-brand {
+		position: absolute;
+		padding: 0px 25px;
+		top: 10px;
+	}
+	.nav, .nav.navbar.navbar-default.navbar-static-top {
+		padding: 0;
+	}
+	.navbar-collapse a.nav-link {
+		padding: 0px !important;
+		font-size: 60%;
+	}
+	button.navbar-toggle.collapsed {
+		margin: 10px;
+		padding: 5px;
+	}
+	.footer {
+		font-size: 70%;
+		padding: 2px 15px !important;
+	}
+}
 	
 
 .nav-link.linkButton {

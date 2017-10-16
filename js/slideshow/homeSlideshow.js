@@ -12,42 +12,36 @@ var fadeInterval,
 
 
 $(document).ready(resizeHeaders);
-// $(window).on('resize',resizeHeaders);
+$(window).on('resize',resizeHeaders);
 
 function resizeHeaders() {
 
 	if ($(window).height() < 300) {
 		//Change header for short displays
-		// Note: would like to simplify this with some height based media queries
-		
-		
+
   		// Change the text content and size
 			$('.navbar-brand').html("<i class='fa fa-cubes'></i>Matt McNeil <span class='text-small '>Web Development Portfolio<span>");
-			$('.nav, .navbar-brand').css({'font-size' : '120%', 'height' : 'auto', 'padding' : '15px'});
-			$('.nav, .nav.navbar.navbar-default.navbar-static-top').css('padding', '0');
-			$('.navbar-collapse a.nav-link').css({'padding' : '0px !important', 'font-size': '60%'});
-				// 'margin' : '0px !important'});
 			
-			
-			// 
-			$('button.navbar-toggle.collapsed').css({
-    		'margin' : '10px',
-    		'padding' : '5px'
-  		});
-  		
-			
-			//Minimize Footer 
-			$('.footer').css({
-					'font-size': '61%',
-    			'padding' : '5px !important'
-			});
-			
-			// $('a.navbar-brand').css('position', 'absolute').animate({padding : '1px 25px', top: '10px'}, 500);
 			$('#slideshow').css({
 				'max-height' : .2*$(window).height(), 
 				'background-size' : '400%' 
 			}).html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
-		// });
+	} else {
+		//reverse the changes (display fullscreen version)
+			$('.navbar-brand').html("<i class='fa fa-cubes'></i>Matt McNeil<br /><span class='text-small '>Web Development Portfolio<span>");
+			
+			// Get the currently displayed image and drop it back into the slideshow container
+			var currentImage = $('#slideshow').css('background-image');
+			
+			// Clean off the url() and full path from URL
+			currentImage = currentImage.match('(/images.+)')[0].replace('url(','').replace(')','').replace(/\"/gi, "");
+			console.log("The current image is", currentImage);
+			
+			$('#slideshow').css({
+				'max-height' : '', 
+				'background-size' : '100% auto'
+			}).html('<img src="'+currentImage+'" />');
+		
 	}
 }
 	
@@ -109,8 +103,9 @@ $(document).ready(function() {
 				if ($(window).height() < 768) {
 					// $( '#slideshow' ).remove();
 					$('#slideshow').empty().css({
-						'min-height' : '150px',
-						'max-height' : .5*$(window).height(),
+						// 'min-height' : '150px',
+						'min-height' : .65*$(window).height(),
+						'max-height' : .9*$(window).height(),
 						'margin-top' : '0px'
 					});
 					
@@ -129,6 +124,7 @@ $(document).ready(function() {
 				else {
 					$('#slideshow').css({
 						'width' : '100%',
+						'min-height' : $(window).height * .8,
 						'max-height' : '444px'
 					}).appendTo('#contentRight');
 					// check if it's on the right
@@ -187,7 +183,7 @@ $(document).ready(function() {
 			// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
 
 
-	// ** IMAGES **
+		// ** IMAGES **
 			//Fade out the previous picture and show the next image to correspond with the current list item
 			$('#slideshow').fadeOut('fast', function() {
 
@@ -239,7 +235,10 @@ $(document).ready(function() {
 			'padding' : '20px',
 			'margin-top' : '60px'
 		}).hide();
-		$('#slideshow').css('background-image', 'url(images/slideshow/1.jpg)').fadeIn();
+		$('#slideshow').css('background-image', 'url(images/slideshow/1.jpg)')
+			.empty()
+			.append('<img class="fading-image" src="/images/slideshow/1.jpg" />')
+			.fadeIn('slow');
 		$('#jqueryList li').eq(0).fadeIn();
 		$(function() {
 			var list_slideshow = $('#jqueryList'),
