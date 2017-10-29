@@ -69,10 +69,6 @@
 					trigger : 'hover'
 				});
 				
-				$('head').append( $("<script />", {
-  				type: 'text/javascript',
-  				src: "/js/slideshow/homeSlideshow.js"
-				}));
 			});
 			
 		</script>

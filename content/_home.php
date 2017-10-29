@@ -1,8 +1,17 @@
+
 <script type="text/javascript">
 	$(document).ready(function () {
 	  /* global $ */
 	  $(".nav-link").removeClass("active");
 	  $('#home').addClass('active');
+	
+			
+		// Add slideshow
+		$('head').append( $("<script />", {
+			type: 'text/javascript',
+			src: "/js/slideshow/homeSlideshow.js"
+		}));
+		
 	});
 </script>
 
