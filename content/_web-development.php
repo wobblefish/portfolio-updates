@@ -15,39 +15,41 @@
 	<div id="row">
     <h1 class="text-center">Web Development</h1>
     <div id="web-development"> 
-      <div class="col-xs-12 col-md-4 col-md-offset-2 text-center">
-      	<a class="" href="bst_site" target="_blank" data-toggle="tooltip" data-placement="right" title="Visit Page">
+      <div class="col-xs-12 col-md-6 text-center">
+      	<a class="" href="bst_site" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">
       	  <video id="BST" class="wide " autoplay loop muted poster="/images/web-development/BST-FS.png">
       	    <source type="video/mp4" src="/images/web-development/BST-FS.mp4">
       	    <source type="video/webm" src="/images/web-development/BST-FS.webm">
           </video>
         </a>
-      	  <h3 class="font-weight-bold">Breton SmarTek / FireQ-RVS Website</h3>
-      	  <br>
-      	  <a data-toggle="modal" data-target="#bretonsmartek-modal"><span>(See Details)</span></a>
+    	  <h3 class="font-weight-bold">Breton SmarTek / FireQ-RVS Website</h3>
+    	  <br>
+    	  <a data-toggle="modal" data-target="#bretonsmartek-modal"><span>(See Details)</span></a>
       </div>
       
       <!--Make this into a fancybox window - play walkthrough video -->
       <div class="col-xs-12 col-md-6 text-center">
-      	<a class="fancybox fancybox.iframe" href="/images/web-development/MimirWalkthrough.mp4" data-toggle="tooltip" data-placement="right" title="Watch Demo">
+      	<a class="fancybox fancybox.iframe" href="/images/web-development/MimirWalkthrough.mp4" data-toggle="tooltip" data-placement="top" title="Watch Demo">
       	  <video id="Mimir" class="wide " autoplay loop muted poster="/images/web-development/Mimir-FS.png">
       	    <source type="video/mp4" src="/images/web-development/Mimir-FS.mp4">
       	    <source type="video/webm" src="/images/web-development/Mimir-FS.webm">
           </video>
         </a>
-      	  <h3 class="font-weight-bold">Mimir Networks Website</h3>
-      	  <br>
-      	  <a data-toggle="modal" data-target="#mimir-modal"><span>(See Details)</span></a>
+    	  <h3 class="font-weight-bold">Mimir Networks Website</h3>
+    	  <br>
+    	  <a data-toggle="modal" data-target="#mimir-modal"><span>(See Details)</span></a>
       </div>
       
       
       
       
-      <div class="col-xs-12 col-md-4 col-md-offset-2 text-center" id="DevMatch">
-        <a class="" href="https://devmatch120884.herokuapp.com/" alt="DevMatch" target="_blank" data-toggle="tooltip" data-placement="right" title="Visit Page"><img src="/images/web-development/DevMatch.png" /></a>
-            <h3 class="font-weight-bold">DevMatch</h3>
-            <br>
-            <a data-toggle="modal" data-target="#devmatch-modal"><span>(See Details)</span></a>
+      <div class="col-xs-12 col-md-6 text-center" id="DevMatch">
+        <a class="" href="https://devmatch120884.herokuapp.com/" alt="DevMatch" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">
+          <img class="img-responsive" src="/images/web-development/DevMatch.png" />
+        </a>
+        <h3 class="font-weight-bold">DevMatch</h3>
+        <br>
+        <a data-toggle="modal" data-target="#devmatch-modal"><span>(See Details)</span></a>
       </div>
       
       <div class="col-xs-12 col-md-6 text-center"></div>
