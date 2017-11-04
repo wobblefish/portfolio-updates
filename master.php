@@ -47,7 +47,6 @@
     <!-- Load Fancy Box Options for Images -->
     <script type="text/javascript" src="/js/fancy-box-images.js"></script>
     
-    		
 		<!--
 			Below was a custom jQuery script I developed to bring some visual interest to a product promotional page
 			List items are highlighted one by one while a corresponding slide image is shown in the desktop version
