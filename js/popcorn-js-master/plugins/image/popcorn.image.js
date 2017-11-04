@@ -103,13 +103,13 @@
             elem: "input",
             type: "url",
             label: "Image URL",
-            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/images/for_developers.png"
+            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/resources/for_developers.png"
           },
           href: {
             elem: "input",
             type: "url",
             label: "Link",
-            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/images/for_developers.png",
+            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/resources/for_developers.png",
             optional: true
           },
           target: "image-container",

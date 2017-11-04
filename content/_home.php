@@ -20,7 +20,7 @@
 		<div id="contentLeft" class="col-xs-12 col-md-6 col-lg-6">
 			<!--Start the slideshow when image DIV is clicked -->
 			<div id="slideshow" class="intro" onmouseup='StartSlideshow()'>
- 				<img src="/images/slideshow/intro.jpg" class="img-responsive" style="visibility: hidden;" />
+ 				<img src="/resources/slideshow/intro.jpg" class="img-responsive" style="visibility: hidden;" />
 			</div>
 
 			<ul id="jqueryList">

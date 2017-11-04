@@ -1,6 +1,6 @@
 <?php
 define("APP_ROOT", $_SERVER['DOCUMENT_ROOT']);
-$page_content = 'graphics.php';
-$title = "UI Work / Graphic Design";
+$page_content = 'media.php';
+$title = "Graphic Design & Videos";
 include(APP_ROOT . '/master.php');
 ?>

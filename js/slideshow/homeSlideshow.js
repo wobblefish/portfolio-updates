@@ -69,8 +69,8 @@ $(document).ready(function() {
 		img.src = url;
 	}
 	for (var index = 1; index <= 10; index++) {
-		console.log("loading", '/images/slideshow/' + index + ".jpg")
-		preloadImage('/images/slideshow/' + index + ".jpg");
+		console.log("loading", '/resources/slideshow/' + index + ".jpg")
+		preloadImage('/resources/slideshow/' + index + ".jpg");
 	}
 	
 	$('#showHideFooter').click(function() {
@@ -231,7 +231,7 @@ function RotateImages(index) {
 	//Fade out the previous picture and show the next image to correspond with the current list item
 	$('#slideshow').fadeOut('fast', function() {
 
-		var imgSource = "/images/slideshow/" + (index + 1) + ".jpg";
+		var imgSource = "/resources/slideshow/" + (index + 1) + ".jpg";
 		console.log(imgSource);
 
 		$('#slideshow').empty();

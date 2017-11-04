@@ -30,7 +30,7 @@
 		
 		<link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
 		
-		<!-- Graphics Page Includes -->
+		<!-- Media Page Includes -->
 		
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="/js/fancybox/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
@@ -79,14 +79,14 @@
 
 	  <!-- Pre-load elements with template -->
     <div class="preload" style="display:none">
-    	<img src="/images/graphic-design/Logo1-bretonsmartek.jpg" />
-			<img src="/images/graphic-design/Logo2-fireq.jpg" />
-			<img src="/images/graphic-design/Logo3-cit.png" />
-			<img src="/images/graphic-design/Logo4-ggm.jpg" />
-			<img src="/images/graphic-design/businessCard.png" />
-			<img src="/images/graphic-design/musicFlyer1.jpg" />
-			<img src="/images/graphic-design/musicFlyer2.jpg" />
-			<img src="/images/graphic-design/musicFlyer3.jpg" />
+    	<img src="/resources/media/Logo1-bretonsmartek.jpg" />
+			<img src="/resources/media/Logo2-fireq.jpg" />
+			<img src="/resources/media/Logo3-cit.png" />
+			<img src="/resources/media/Logo4-ggm.jpg" />
+			<img src="/resources/media/businessCard.png" />
+			<img src="/resources/media/musicFlyer1.jpg" />
+			<img src="/resources/media/musicFlyer2.jpg" />
+			<img src="/resources/media/musicFlyer3.jpg" />
     </div>
     
   </body>
