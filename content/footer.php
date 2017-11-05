@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="container">
+<div class="container" style="padding:0;">
 	<div class="footerButton text-center">
 		<button id="showHideFooter" type="button" class="btn btn-link"><i class="fa"></i></button>	
 	</div>

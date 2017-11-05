@@ -58,7 +58,7 @@ function showHideFooter() {
 	} else {
 		$('footer').slideDown('3000');
 		$('.footerButton i').removeClass('fa-arrow-circle-o-up').addClass('fa-arrow-circle-o-down')
-		$('.footerButton').animate({'bottom' : footerHeight }, 500);
+		$('.footerButton').animate({'bottom' : footerHeight - 41 }, 500);
 	}
 }
 
