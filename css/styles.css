@@ -1,9 +1,5 @@
 body {			
-	/*min-height: 100vh;*/
-	/*position: relative;*/
-	/*margin-bottom: 250px;*/
 	font-family: 'Titillium Web', sans-serif;
-	/*min-height: 400px;*/
   margin-bottom: 120px;
   clear: both;
 }
@@ -12,43 +8,45 @@ h1 {
 	margin:44px 0px;
 }
 
+/*.container {*/
+/*	margin: 0 auto;*/
+/*  width: 100%;*/
+/*}*/
+
 .footer {
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
-	width: 100%;
 	width: 100%;
 	background: #085a91;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #041e34, #085a91);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #085a91, #041e34); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	padding: 20px;
 	color: white;
-	border-radius: 5px;
-	box-shadow: -2px 2px 4px 1px rgb(20, 20, 20);
+	/*border-radius: 5px;*/
+	/*box-shadow: -2px 2px 4px 1px rgb(20, 20, 20);*/
+	/*margin-bottom:20px;*/
 }
 .footerButton {
   position: fixed;
-  width: 115% !important;
-  left: -3px;
+  width: 100% !important;
+  left: 0px;
   bottom: 0px;
-  /*margin: -70px;*/
   padding: 0;
-  width: 100%;
   background: #085a91;
-  background: -webkit-linear-gradient(to left, #041e34, #085a91);
-  background: linear-gradient(to left, #085a91, #041e34);
+  background: -webkit-linear-gradient(to left, #084e7f, #041c2f);
+  background: linear-gradient(to left, #084e7f, #041c2f);
   color: white;
-  border-radius: 5px;
 }
 .footerButton button.btn.btn-link {
-  width: 100%;
-  border: 1px solid #0d90e7;
   border-radius: 5px;
   padding: 10px 0px;
+  outline: none;
 }
 
 .footerButton i {
 	color:white;
+	margin-left: 0;
 }
 
 .footerLinks {
@@ -255,7 +253,8 @@ li .linkButton:nth-child(4) {
 		padding: 0;
 	}
 	.navbar-collapse a.nav-link {
-		padding: 0px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
 		font-size: 60%;
 	}
 	button.navbar-toggle.collapsed {
@@ -265,6 +264,9 @@ li .linkButton:nth-child(4) {
 	.footer {
 		font-size: 70%;
 		padding: 2px 15px !important;
+	}
+	.footerLinks {
+		margin-top: 5px;
 	}
 }
 	
@@ -307,15 +309,12 @@ video.wide {
   border: 3px solid hsla(0, 0%, 0%, 0.34);
   box-shadow: -2px 2px 4px 1px rgb(20, 20, 20);
   border-radius:15px;
-  /*padding:2px;*/
-  /*margin: 20px 0px;*/
   max-height: 450px;
 }
 
 #web-development img:hover, #web-development video:hover,
 #media img:hover 
 {
-	/*border: 3px solid white;*/
 	box-shadow: 0px 0px 25px 2px #085A91;
 }
 
