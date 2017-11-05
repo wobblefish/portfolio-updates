@@ -51,6 +51,14 @@ h1 {
 	color:white;
 }
 
+.footerLinks {
+	margin-top: 20px;
+}
+
+.footerLinks a i:hover {
+	color:white;
+}
+
  /*Color changing for the site button hover effects */
 li a:nth-child(1):hover 
 	{color: rgb(11, 213, 221);
@@ -276,11 +284,11 @@ li .linkButton:nth-child(4) {
 
 /* MEDIA / UI Page Styles */
 img.wide {
-	height: 200px
+	height: 300px
 }
 
 img.tall {
-	height: 300px;
+	height: 400px;
 }
 
 .thumbnail {
@@ -312,8 +320,8 @@ video.wide {
 }
 
 /* Display links full height of image/video for tooltip positioning */
-#web-development a {
-	display: block;
+#web-development a, #media a {
+	display: inline-block;
 	height: 100%;
 }
 .web-development span{

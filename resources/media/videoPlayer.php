@@ -13,11 +13,17 @@ switch ($_GET['video']) {
        $mp4Path = "";
 }
 ?>
+<div class="container">
+    <div class="row">
+        <div align="center" class="col-md-12 embed-responsive embed-responsive-16by9">
+            <video autoplay controls class="img-responsive embed-responsive-item" style="width: 70%;">
+              <source type="video/mp4" src="<?php echo $mp4Path; ?>">
+              <!--<source type="video/webm" src="/resources/web-development/BST-FS.webm">-->
+            </video>
+        </div>
+    </div>
+</div>
 
-<video autoplay>
-  <source type="video/mp4" src="<?php echo $mp4Path; ?>">
-  <!--<source type="video/webm" src="/resources/web-development/BST-FS.webm">-->
-</video>
       
       
       

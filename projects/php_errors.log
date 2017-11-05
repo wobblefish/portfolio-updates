@@ -110,3 +110,11 @@
 [04-Nov-2017 01:51:16 UTC] PHP Stack trace:
 [04-Nov-2017 01:51:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/projects/media/index.php:0
 [04-Nov-2017 01:51:16 UTC] PHP   2. include() /home/ubuntu/workspace/projects/media/index.php:5
+[05-Nov-2017 01:21:52 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/content/footer.php on line 16
+[05-Nov-2017 01:21:52 UTC] PHP Stack trace:
+[05-Nov-2017 01:21:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/projects/web-development/index.php:0
+[05-Nov-2017 01:21:52 UTC] PHP   2. include() /home/ubuntu/workspace/projects/web-development/index.php:5
+[05-Nov-2017 01:23:00 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/content/footer.php on line 16
+[05-Nov-2017 01:23:00 UTC] PHP Stack trace:
+[05-Nov-2017 01:23:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/projects/web-development/index.php:0
+[05-Nov-2017 01:23:00 UTC] PHP   2. include() /home/ubuntu/workspace/projects/web-development/index.php:5

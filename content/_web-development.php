@@ -1,9 +1,6 @@
-<script type="text/javascript" src="/js/popcorn-js-master/popcorn.js"></script>
-
-
 <script type="text/javascript">
 	$(document).ready(function () {
-	  /* global $, Popcorn */
+	  /* global $ */
 	  $(".nav-link").removeClass("active");
 	  $('#webdev').addClass('active');
 
@@ -201,12 +198,12 @@
           <ul>
               <li>
                   <p>
-                      HTML / CSS
+                      WordPress
                   </p>
               </li>
               <li>
                   <p>
-                      WordPress
+                      HTML / CSS
                   </p>
               </li>
               <li>
