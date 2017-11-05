@@ -12,7 +12,7 @@ var fadeInterval,
 var footerHeight;
 
 $(document).ready(resizeHeaders);
-$(window).on('resize',resizeHeaders);
+$(window).on('resize', resizeHeaders);
 
 function resizeHeaders() {
 
@@ -25,9 +25,11 @@ function resizeHeaders() {
 		$('#slideshow').css({
 			'max-height': .2 * $(window).height(),
 			'background-size': '400%'
-		}).html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
+		});
+		// .html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
 		
 		footerHeight = 56;
+		
 	}
 	else {
 		//reverse the changes (display fullscreen version)
@@ -37,8 +39,8 @@ function resizeHeaders() {
 		var currentImage = $('#slideshow').css('background-image');
 
 		// Clean off the url() and full path from URL
-		currentImage = currentImage.match('(/images.+)')[0].replace('url(', '').replace(')', '').replace(/\"/gi, "");
-		console.log("The current image is", currentImage);
+		currentImage = currentImage.match('(/resources.+)')[0].replace('url(', '').replace(')', '').replace(/\"/gi, "");
+		// console.log("The current image is", currentImage);
 
 		$('#slideshow').css({
 			'max-height': '',
@@ -50,7 +52,13 @@ function resizeHeaders() {
 	}
 }
 
+
+
+
 function showHideFooter() {
+	
+	console.log(footerHeight);
+	
 	if ( $('.footer').is(':visible') ) {
 		$('footer').slideUp('3000');
 		$('.footerButton i').removeClass('fa-arrow-circle-o-down').addClass('fa-arrow-circle-o-up')
@@ -58,7 +66,7 @@ function showHideFooter() {
 	} else {
 		$('footer').slideDown('3000');
 		$('.footerButton i').removeClass('fa-arrow-circle-o-up').addClass('fa-arrow-circle-o-down')
-		$('.footerButton').animate({'bottom' : footerHeight - 41 }, 500);
+		$('.footerButton').animate({'bottom' : footerHeight + 4 }, 500);
 	}
 }
 
@@ -69,7 +77,7 @@ $(document).ready(function() {
 		img.src = url;
 	}
 	for (var index = 1; index <= 10; index++) {
-		console.log("loading", '/resources/slideshow/' + index + ".jpg")
+		// console.log("loading", '/resources/slideshow/' + index + ".jpg")
 		preloadImage('/resources/slideshow/' + index + ".jpg");
 	}
 	
@@ -232,7 +240,7 @@ function RotateImages(index) {
 	$('#slideshow').fadeOut('fast', function() {
 
 		var imgSource = "/resources/slideshow/" + (index + 1) + ".jpg";
-		console.log(imgSource);
+		// console.log(imgSource);
 
 		$('#slideshow').empty();
 		$('#slideshow').css('background-image', 'url(' + imgSource + ')');
