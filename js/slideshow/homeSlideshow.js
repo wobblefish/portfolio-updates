@@ -151,9 +151,9 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 					'opacity': '0.94'
 				}).fadeIn(500);
 				$('#jqueryList').appendTo('#slideshow-mobile-row div');
-				$(window).on('load', function() {
+
 		       RotateListItems();
-		    });
+
 			}
 			else {
 				$('#slideshow').css({
@@ -163,10 +163,10 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 				}).appendTo('#contentRight');
 				// check if it's on the right
 				// move back if so
-				$(window).on('load', function() {
-		       HighlightList();
-		    });
-				
+				$('.preload-slideshow').waitForImages(function() {
+			    // All descendant images have loaded, now slide up.
+			    HighlightList();
+				});
 			}
 
 		});

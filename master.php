@@ -12,6 +12,9 @@
 		<!-- Include jQuery-->
 		<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 		
+		<!-- Wait for images jQuery plugin -->
+		<script type="text/javascript" src="/js/jquery.waitforimages.min.js"></script>
+		
 		<!-- Include Bootstrap CDN -->
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
 		
@@ -76,8 +79,18 @@
     <?php include(APP_ROOT . '/content/navigation.php');?>
     <?php include(APP_ROOT . '/content/_' . $page_content);?>
     <?php include(APP_ROOT . '/content/footer.php');?>
-
-	  <!-- Pre-load elements with template -->
+    
+     <!-- Pre-load elements with template -->
+    <div class="preload-slideshow" style="display:none">
+			<img src="/resources/slideshow/1.jpg" />
+			<img src="/resources/slideshow/2.jpg" />
+			<img src="/resources/slideshow/3.jpg" />
+			<img src="/resources/slideshow/4.jpg" />
+			<img src="/resources/slideshow/5.jpg" />
+			<img src="/resources/slideshow/6.jpg" />
+    </div>
+    
+   	<!-- Pre-load media page elements with template -->
     <div class="preload" style="display:none">
     	<img src="/resources/media/Logo1-bretonsmartek.jpg" />
 			<img src="/resources/media/Logo2-fireq.jpg" />
@@ -89,14 +102,5 @@
 			<img src="/resources/media/musicFlyer3.jpg" />
     </div>
     
-     <!-- Pre-load elements with template -->
-    <div class="preload" style="display:none">
-			<img src="/resources/slideshow/1.jpg" />
-			<img src="/resources/slideshow/2.jpg" />
-			<img src="/resources/slideshow/3.jpg" />
-			<img src="/resources/slideshow/4.jpg" />
-			<img src="/resources/slideshow/5.jpg" />
-			<img src="/resources/slideshow/6.jpg" />
-    </div>
   </body>
 </html>

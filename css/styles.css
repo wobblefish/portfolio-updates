@@ -123,12 +123,12 @@ li .linkButton:nth-child(4) {
 
 @keyframes move {
   0%, 100% {
-    background-position: center center;
-    background-size: auto 135%;
+    background-position: left bottom;
+    background-size: auto 130%;
   }
   50% {
     background-position: right top;
-    background-size: auto 120%;
+    background-size: auto 130%;
   }
 }
 
