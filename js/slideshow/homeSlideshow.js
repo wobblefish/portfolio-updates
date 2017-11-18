@@ -15,6 +15,18 @@ var footerHeight;
 $(document).ready(resizeHeaders);
 $(window).on('resize', resizeHeaders);
 
+// $.fn.center = function () {
+//     this.css("position","absolute");
+//     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+//                                                 $(window).scrollTop()) + "px") -
+//                                                 $('#slideshow img').height();
+//     return this;
+// }
+
+// $(window).scroll(function() {
+// 	$('#slideshow').center();
+// });
+
 function resizeHeaders() {
 
 	if ($(window).height() < 300) {
@@ -29,7 +41,7 @@ function resizeHeaders() {
 		});
 		// .html('<h1 class="text-center ml-1">Click Here To Begin Slideshow</h1>');
 		
-		footerHeight = 56;
+		footerHeight = $('footer').outerHeight(true);
 		
 	}
 	else {
@@ -48,7 +60,7 @@ function resizeHeaders() {
 			'background-size': '100% auto'
 		}).html('<img src="' + currentImage + '" />');
 		
-		footerHeight = 120;
+		footerHeight = $('footer').outerHeight(true);
 
 	}
 }
@@ -63,11 +75,11 @@ function showHideFooter() {
 	if ( $('.footer').is(':visible') ) {
 		$('footer').slideUp('3000');
 		$('.footerButton i').removeClass('fa-arrow-circle-o-down').addClass('fa-arrow-circle-o-up')
-		$('.footerButton').animate({'bottom' : '0'}, 500);
+		$('.footerButton').animate({'bottom' : '0'}, 800);
 	} else {
 		$('footer').slideDown('3000');
 		$('.footerButton i').removeClass('fa-arrow-circle-o-up').addClass('fa-arrow-circle-o-down')
-		$('.footerButton').animate({'bottom' : footerHeight + 4 }, 500);
+		$('.footerButton').animate({'bottom' : footerHeight }, 800);
 	}
 }
 
@@ -85,40 +97,7 @@ $(document).ready(function() {
 	$('#showHideFooter').click(function() {
 		showHideFooter();
 	});
-
-	//Testing slideshow stop/start with click
-
-	// $(window).click(function() {
-	// 	console.log("window clicked");
-	// 	console.log(HLTimeout, uHLTimeout);
-	// 	continueLoop = false;
-	// 	// clearTimeout(HLTimeout);
-	// 	// clearTimeout(uHLTimeout);
-	// 	 //$('body').load('/index.php');
-	// })
-
-	// Resize check ()
-	// WIP - will need to undo all of the CSS changes from Highlight or Rotate functions
-	// to begin performing the opposite function
-
-	// $(window).resize(function() {
-	// 	if ($(window).width() < 992) {
-	// 		clearTimeout(HLTimeout);
-	// 		clearTimeout(uHLTimeout);
-	// 		$('#jqueryList').appendTo('#slideshow-mobile-row div');
-	// 		RotateListItems();
-	// 	} else {
-	// 		$( "#slideshow-mobile-row div" ).has( "ul" ).appendTo('#contentLeft');
-	// 		$('#slideshow').css('width', '100%').appendTo('#contentRight');
-	// 		clearInterval(fadeInterval);
-	// 		$('#jqueryList li').removeAttr('style');
-	// 		// $('#jqueryList').css('margin-top', '-182px').css('width', '100%').css('opacity', '0.94').fadeIn(500);
-	// 		$('li[class^="listItem"]').show();
-	// 		HighlightList();
-	// 	}
-	// });
-
-
+	
 }); //document ready
 
 
@@ -126,9 +105,10 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 	if (slideshowStart == 0) { // Prevent from starting the slideshow again if flag is not set to zero
 
 		slideshowStart = 1; // If not yet started, update the flag and fade out the intro image and begin to show the list
-
+		$('#jqueryList').hide();
 		$('#slideshow').fadeOut('slow', function() {
 			$('#slideshow').removeClass('intro');
+			
 			// If window resized and width < 992 hide image
 
 			//Detect window width for mobile or desktop slideshow 
@@ -137,20 +117,20 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 				$('#slideshow').empty().css({
 					// 'min-height' : '150px',
 					'min-height': .5 * $(window).height(),
-					'max-height': .8 * $(window).height(),
+					'max-height': .6 * $(window).height(),
 					'margin-top': '0px'
 				});
 
 
 				// $('footer').animate({margin : '0 0 -95px 0'}, 1500);
-				footerHeight = $('footer.footer').height() + 36;
+				footerHeight = $('footer.footer').outerHeight(true);
 				showHideFooter();
 
 				$('#jqueryList').css({
 					'margin-top': '-182px',
 					'width': '100%',
 					'opacity': '0.94'
-				}).fadeIn(500);
+				});
 				$('#jqueryList').appendTo('#slideshow-mobile-row div');
 					$('.preload-slideshow').waitForImages(function() {
 				    // All descendant images have loaded, now begin
@@ -211,13 +191,11 @@ function HighlightList() {
 		var listIndex = '.listItem' + index;
 
 		$(listIndex).css('background-color', 'black').css('border', '3px double #ffdd00').css('color', 'white');
-		// $( '#contentLeft' ).find(listIndex).addClass( 'iehighlight' );
-		// $( '#contentLeft' ).find(listIndex).addClass( 'shadow' );
 
 		RotateImages(index);
 
 		//Make the active item stand out a bit more with some alignment CSS tweaks
-		// $( listIndex ).css( 'width', '470px' ).css( 'margin-left', '-5px' ).css( 'padding', '21px' );
+		$( listIndex ).css( 'margin-left', '-5px' );
 
 	}
 
@@ -227,7 +205,7 @@ function HighlightList() {
 		$('#contentLeft').find(listIndex).removeClass('iehighlight').removeClass('shadow');
 		$(listIndex).css('border', '1px solid black').css('color', '#dddddd').css('background-color', '#222222');
 
-		// $( listIndex ).css( 'width', '460px' ).css( 'margin-left', '0px' ).css( 'padding', '19px' );
+		$( listIndex ).css( 'margin-left', '0px' );
 
 
 		//Increment the counter to match the next list item
@@ -254,7 +232,7 @@ function RotateImages(index) {
 		$('#slideshow').append('<img class="fading-image" src="' + imgSource + '" />');
 		$('#slideshow img').attr('src', imgSource);
 
-
+		// maintain image height for slideshow div
 		$('.fading-image').css('visibility', 'hidden');
 		// $( '#slideshow' )'background-size', '460px 250px' );
 		$('#slideshow').css('background-repeat', 'no-repeat').fadeIn('fast');
@@ -264,15 +242,16 @@ function RotateImages(index) {
 
 //jQuery Mobile Fade function
 function RotateListItems() {
-
+	$('#jqueryList').hide();
 	$('#jqueryList li').css({
 		'min-height': '5%',
 		'padding': '20px',
 		'margin-top': '60px'
-	}).hide();
+	});
 
 	RotateImages(0);
 	$('#jqueryList li').eq(0).fadeIn();
+	$('#jqueryList').show();
 
 	$(function() {
 		var list_slideshow = $('#jqueryList'),

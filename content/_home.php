@@ -15,9 +15,11 @@
 	});
 </script>
 <style type="text/css">
-	body, html { 
+	html, body { 
+		/*prevent horizontal and vertical scrolling to fix slideshow animation */
     overflow-x: hidden; 
     overflow-y: hidden;
+    margin-bottom: -120px;
 }
 </style>
 <div class="container">
