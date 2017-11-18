@@ -102,5 +102,19 @@
 			<img src="/resources/media/musicFlyer3.jpg" />
     </div>
     
+    <div class="preload-web-dev" style="display:none">
+    	
+    	<img class="img-responsive" src="/resources/web-development/DevMatch.png" />
+    	<!-- Preload web dev video previews -->
+    	<video id="BST" class="wide " autoplay loop muted poster="/resources/web-development/BST-FS.png">
+		    <source type="video/mp4" src="/resources/web-development/BST-FS.mp4">
+		    <source type="video/webm" src="/resources/web-development/BST-FS.webm">
+	    </video>
+	    <video id="BST" class="wide " autoplay loop muted poster="/resources/web-development/BST-FS.png">
+		    <source type="video/mp4" src="/resources/web-development/BST-FS.mp4">
+		    <source type="video/webm" src="/resources/web-development/BST-FS.webm">
+	    </video>
+    </div>
+    
   </body>
 </html>

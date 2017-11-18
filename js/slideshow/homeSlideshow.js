@@ -153,7 +153,7 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 				}).fadeIn(500);
 				$('#jqueryList').appendTo('#slideshow-mobile-row div');
 					$('.preload-slideshow').waitForImages(function() {
-				    // All descendant images have loaded, now slide up.
+				    // All descendant images have loaded, now begin
 				    RotateListItems();
 					});
 			}
@@ -166,7 +166,7 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 				// check if it's on the right
 				// move back if so
 				$('.preload-slideshow').waitForImages(function() {
-			    // All descendant images have loaded, now slide up.
+			    // All descendant images have loaded, now begin
 			    HighlightList();
 				});
 			}

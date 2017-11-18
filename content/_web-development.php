@@ -3,8 +3,8 @@
 	  /* global $ */
 	  $(".nav-link").removeClass("active");
 	  $('#webdev').addClass('active');
-
 	});
+	
 </script>
 
 
@@ -41,7 +41,7 @@
       
       
       <div class="col-xs-12 col-md-6 text-center" id="DevMatch">
-        <a class="" href="https://devmatch120884.herokuapp.com/" alt="DevMatch" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">
+        <a class="DevMatch" href="https://devmatch120884.herokuapp.com/" alt="DevMatch" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">
           <img class="img-responsive" src="/resources/web-development/DevMatch.png" />
         </a>
         <h3 class="font-weight-bold">DevMatch</h3>

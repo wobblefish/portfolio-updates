@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 	  /* global $ */
+	  $('img').css('opacity', '0');
 	  $(".nav-link").removeClass("active");
 	  $('#media').addClass('active');
 	  
@@ -10,6 +11,15 @@
         'type': 'iframe'
     });
     
+    $('.preload').waitForImages(function() {
+      
+      $( "img" ).animate({
+        opacity: 1
+      }, 1400, function() {
+        // Animation complete.
+      });
+      
+    });
 	});
 </script>
 
