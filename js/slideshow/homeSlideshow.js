@@ -76,7 +76,7 @@ $(document).ready(function() {
 		var img = new Image();
 		img.src = url;
 	}
-	for (var index = 1; index <= 10; index++) {
+	for (var index = 1; index <= 6; index++) {
 		// console.log("loading", '/resources/slideshow/' + index + ".jpg")
 		preloadImage('/resources/slideshow/' + index + ".jpg");
 	}
