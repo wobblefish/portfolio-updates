@@ -4,6 +4,7 @@
 //This flag is updated when the user clicks to start the slideshow
 var slideshowStart = 0;
 var count = 0;
+var mobileDelayTime = 8000;
 var delayTime = 4000; //Delay time for change in ms
 var fadeInterval,
 	HLTimeout,
@@ -151,9 +152,10 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 					'opacity': '0.94'
 				}).fadeIn(500);
 				$('#jqueryList').appendTo('#slideshow-mobile-row div');
-
-		       RotateListItems();
-
+					$('.preload-slideshow').waitForImages(function() {
+				    // All descendant images have loaded, now slide up.
+				    RotateListItems();
+					});
 			}
 			else {
 				$('#slideshow').css({
@@ -290,6 +292,6 @@ function RotateListItems() {
 		listItems.not(':first').hide();
 
 
-		fadeInterval = setInterval(changeList, delayTime);
+		fadeInterval = setInterval(changeList, mobileDelayTime);
 	}); //jQuery mobile fade function
 } // RotateListItems
