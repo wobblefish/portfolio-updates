@@ -89,5 +89,14 @@
 			<img src="/resources/media/musicFlyer3.jpg" />
     </div>
     
+     <!-- Pre-load elements with template -->
+    <div class="preload" style="display:none">
+			<img src="/resources/slideshow/1.jpg" />
+			<img src="/resources/slideshow/2.jpg" />
+			<img src="/resources/slideshow/3.jpg" />
+			<img src="/resources/slideshow/4.jpg" />
+			<img src="/resources/slideshow/5.jpg" />
+			<img src="/resources/slideshow/6.jpg" />
+    </div>
   </body>
 </html>

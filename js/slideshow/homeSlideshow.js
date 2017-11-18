@@ -151,7 +151,9 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 					'opacity': '0.94'
 				}).fadeIn(500);
 				$('#jqueryList').appendTo('#slideshow-mobile-row div');
-				RotateListItems();
+				$(window).on('load', function() {
+		       RotateListItems();
+		    });
 			}
 			else {
 				$('#slideshow').css({
@@ -161,7 +163,10 @@ function StartSlideshow() { // Initiated when image DIV is clicked
 				}).appendTo('#contentRight');
 				// check if it's on the right
 				// move back if so
-				HighlightList();
+				$(window).on('load', function() {
+		       HighlightList();
+		    });
+				
 			}
 
 		});

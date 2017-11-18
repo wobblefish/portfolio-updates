@@ -14,7 +14,12 @@
 		
 	});
 </script>
-
+<style type="text/css">
+	body, html { 
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+</style>
 <div class="container">
 	<div class="row">
 		<div id="contentLeft" class="col-xs-12 col-md-6 col-lg-6">

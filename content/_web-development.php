@@ -64,7 +64,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h1 class="modal-title">Breton SmarTek / FireQ-RVS</h1>
+        <h1 class="modal-title"><a class="" href="bst_site" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">Breton SmarTek / FireQ-RVS</a></h1>
       </div>
       <div class="modal-body">
         <div class="well">
@@ -251,16 +251,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h1 class="modal-title">DevMatch</h1>
+        <h1 class="modal-title"><a class="" href="https://devmatch120884.herokuapp.com/" alt="DevMatch" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Page">DevMatch</a></h1>
       </div>
       <div class="modal-body">
         <div class="well">
               <p>
               	A full-stack Ruby On Rails application for a fictional startup company app
               	called DevMatch. A membership-based networking platform for students,
-              	developers, entrepreneurs, and investors.
+              	developers, entrepreneurs, and investors. Created as part of Web Development course 
+              	(<a href="//www.upskillcourses.com" target="_blank">UpskillCourses.com</a>) taken
+              	to refresh my knowledge in Ruby On Rails.
               	<br/>
               	<br/>
+              	<a href="//github.com/wobblefish/upskill_saas_app" target="_blank">Git Repo</a>
               	<br/>
               </p>
               <p>

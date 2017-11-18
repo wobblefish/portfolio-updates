@@ -72,7 +72,7 @@
       
       <!--Make this into a fancybox window - play walkthrough video -->
       <div class="col-xs-12 col-md-4 text-center text-center">
-      	<a class="video fancybox fancybox.iframe thumbnail" rel="gallery2" href="/resources/media/videoPlayer.php?video=FireQTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
+      	<a class="video fancybox fancybox.iframe thumbnail" href="/resources/media/videoPlayer.php?video=FireQTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
       	  <img class="img-responsive wide center-block" src="/resources/media/Logo2-fireq.jpg" />
         </a>
     	  <p class="text-center font-weight-bold">FireQ-RVS Sample</p>
@@ -81,7 +81,7 @@
       
       <!--Make this into a fancybox window - play walkthrough video -->
       <div class="col-xs-12 col-md-4 text-center text-center">
-      	<a class="video fancybox fancybox.iframe thumbnail" rel="gallery2" href="/resources/media/videoPlayer.php?video=GGMTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
+      	<a class="video fancybox fancybox.iframe thumbnail" href="/resources/media/videoPlayer.php?video=GGMTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
       	  <img class="img-responsive wide center-block" src="/resources/media/Logo4-ggm.jpg" />
         </a>
     	  <p class="text-center font-weight-bold">Go Green Messaging Sample</p>
@@ -90,7 +90,7 @@
       
       <!--Make this into a fancybox window - play walkthrough video -->
       <div class="col-xs-12 col-md-4 text-center text-center">
-      	<a class="video fancybox fancybox.iframe thumbnail" rel="gallery2" href="/resources/media/videoPlayer.php?video=PremierTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
+      	<a class="video fancybox fancybox.iframe thumbnail" href="/resources/media/videoPlayer.php?video=PremierTraining" data-toggle="tooltip" data-placement="top" title="Watch Video">
       	  <img class="img-responsive wide center-block" src="/resources/media/premier.jpg" />
         </a>
     	  <p class="text-center font-weight-bold">Premier Literacy Suite Sample</p>
